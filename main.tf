@@ -125,7 +125,7 @@ resource "aws_ecs_service" "ecs_service" {
     type = "ECS"
   }
 
-  desired_count                      = var.task_desired_count
+  desired_count                      = 1
   deployment_maximum_percent         = var.deployment_maximum_percent
   deployment_minimum_healthy_percent = var.deployment_minimum_healthy_percent
   health_check_grace_period_seconds  = var.health_check_grace_period_seconds
@@ -158,7 +158,8 @@ resource "aws_ecs_service" "ecs_service" {
 
   lifecycle {
     ignore_changes = [
-      task_definition
+      task_definition,
+      desired_count
     ]
   }
 }
