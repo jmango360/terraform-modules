@@ -117,7 +117,7 @@ resource "aws_security_group" "task_sg" {
 #
 resource "aws_ecs_service" "ecs_service" {
   name             = var.name
-  cluster          = var.ecs_cluster.arn
+  cluster          = var.ecs_cluster_arn
   platform_version = var.platform_version
   task_definition  = aws_ecs_task_definition.task_definition.arn
 

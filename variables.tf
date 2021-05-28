@@ -71,12 +71,9 @@ variable "alb_listener_arn" {
   default     = ""
 }
 
-variable "ecs_cluster" {
-  description = "ECS cluster object for this task."
-  type = object({
-    arn  = string
-    name = string
-  })
+variable "ecs_cluster_arn" {
+  description = "ECS cluster ARN"
+  type = string
 }
 
 variable "platform_version" {
